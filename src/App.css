@@ -1,3 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 .btn-gradient{
   background: linear-gradient(90deg, #B58529 0%, #9F0F29 33.33%, #0D4B85 66.67%, #295017 100%);
+}
+.btn-gradient-less {
+  background: linear-gradient(90deg, rgba(181, 133, 41, 0.3) 0%, rgba(159, 15, 41, 0.3) 33.33%, rgba(13, 75, 133, 0.3) 66.67%, rgba(41, 80, 23, 0.3) 100%);
 }

@@ -12,13 +12,13 @@ function Footer() {
     <div className='bg-white flex flex-col justify-between items-center w-screen h-[160px] md:h-[260px] relative pt-1'>
       <img src={rootfooter} className='absolute top-[-200px] md:top-[-300px] left-0 w-[220px] md:w-auto' />
      <div className=' flex gap-4 md:gap-10'>
-      <a href="">
+      <a href="https://www.instagram.com/gdsc_ensia/?igsh=MTlpODBtNm9sd2Rqdg%3D%3D">
         <img 
         src={insta}
         className='h-[40px] md:h-auto'
         />
       </a>
-      <a href="">
+      <a href="https://web.facebook.com/gdsc.ensia?mibextid=LQQJ4d&_rdc=1&_rdr">
         <img 
         src={fb}
         className='h-[40px] md:h-auto'
@@ -30,13 +30,13 @@ function Footer() {
         className='h-[40px] md:h-auto'
         />
       </a>
-      <a href="">
+      <a href="mailto:gdsc.ensia@ensia.edu.dz">
         <img 
         src={sms}
         className='h-[40px] md:h-auto'
         />
       </a>
-      <a href="">
+      <a href="https://discord.com/invite/kUfgeTJq">
         <img 
         src={discord}
         className='h-[40px] md:h-auto'

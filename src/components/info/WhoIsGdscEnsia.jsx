@@ -1,7 +1,7 @@
 import React from 'react'
-import gdsclogo from '../../../public/images/gdscLogo.svg'
+import gdsclogo from '/images/gdscLogo.svg'
 import {Link} from 'react-router-dom'
-import leafguyUp from '../../../public/images/leafguyUp.png'
+import leafguyUp from '/images/leafguyUp.png'
 function WhoIsGdscEnsia() {
   return (
     <div className="relative flex flex-col w-full gap-[100px] pb-[100px] px-[20px] md:px-[100px]">

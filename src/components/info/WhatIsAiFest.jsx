@@ -1,15 +1,15 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import leafguyUp from '../../../public/images/leafguyUp.png'
-import leafguyDown from '../../../public/images/leafguyDown.png'
+import leafguyUp from '/images/leafguyUp.png'
+import leafguyDown from '/images/leafguyDown.png'
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import img1 from '../../../public/images/20230619_180433.jpg';
-import img2 from '../../../public/images/20230619_180631.jpg';
-import img3 from '../../../public/images/20230619_182935.jpg';
-import img4 from '../../../public/images/IMG_1005.jpg';
-import img5 from '../../../public/images/IMG_1115.jpg';
-import img6 from '../../../public/images/IMG_1416.jpg';
+import img1 from '/images/20230619_180433.jpg';
+import img2 from '/images/20230619_180631.jpg';
+import img3 from '/images/20230619_182935.jpg';
+import img4 from '/images/IMG_1005.jpg';
+import img5 from '/images/IMG_1115.jpg';
+import img6 from '/images/IMG_1416.jpg';
 
 function WhatIsAiFest() {
   const CarouselData = [ img1, img2, img3, img4, img5, img6 ];

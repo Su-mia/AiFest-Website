@@ -1,17 +1,16 @@
 import react from 'react';
-import arrowLeft from '../../../public/images/leftArrow.png'
-import arrowRight from '../../../public/images/rightArrow.png'
+import arrowRight from '/images/left-arrow.svg'
+import arrowLeft from '/images/right-arrow.svg'
 
 const Arrow = ({ direction}) => {
     const arrowImage = direction === 'left' ? arrowLeft : arrowRight;
     return (
-        <div className="flex items-center justify-center ">
             <img
                 src={arrowImage}
                 alt="arrow"
-                className="w-10 h-10 md:w-28 md:h-28"
+                className=" h-[90px] w-[90px] md:h-auto md:w-auto lg:min-w-max lg:min-h-max"
             />
-        </div>
+        
     );
 }
 export default Arrow;

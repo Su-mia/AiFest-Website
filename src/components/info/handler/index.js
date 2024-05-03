@@ -1,9 +1,9 @@
-import abdelhak from '../../../../public/images/abdelhak.jpg'
-import booba from '../../../../public/images/booba.jpg';
-import Abdenour from '../../../../public/images/abdenour.jpg';
-import Manell from '../../../../public/images/Manell.jpg';
-import Larbi from '../../../../public/images/Larbi.jpg';
-import yasmine from '../../../../public/images/yasmine.jpg';
+import abdelhak from '/images/abdelhak.jpg'
+import booba from '/images/booba.jpg';
+import Abdenour from '/images/abdenour.jpg';
+import Manell from '/images/Manell.jpg';
+import Larbi from '/images/Larbi.jpg';
+import yasmine from '/images/yasmine.jpg';
 
 export const speakers = [
     {

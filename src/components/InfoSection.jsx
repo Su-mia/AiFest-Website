@@ -6,6 +6,7 @@ function InfoSection() {
   return (
     <div 
     id='About'
+    className="w-full info-bg"
     >
        <WhatIsAiFest/>
        <WhoIsGdscEnsia/>

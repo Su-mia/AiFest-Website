@@ -8,7 +8,7 @@ export default {
     extend: {
       fontFamily:{
         'primary': [ 'Open Sans', 'sans-serif'],
-        'secondary':['']
+        'aladin' :  ['Aladin' , 'system-ui'],
       }
     },
   },

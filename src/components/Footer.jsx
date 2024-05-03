@@ -10,7 +10,7 @@ import WaterMark from './WaterMark'
 function Footer() {
   return (
     <div className='bg-white flex flex-col justify-between items-center w-screen h-[160px] md:h-[260px] relative pt-1'>
-      <img src={rootfooter} className='absolute top-[-200px] md:top-[-300px] left-0 w-[220px] md:w-auto' />
+      <img src={rootfooter} className='absolute top-[-200px] md:top-[-300px] left-0 w-[220px] lg:w-auto' />
      <div className=' flex gap-4 md:gap-10'>
       <a href="https://www.instagram.com/gdsc_ensia/?igsh=MTlpODBtNm9sd2Rqdg%3D%3D">
         <img 

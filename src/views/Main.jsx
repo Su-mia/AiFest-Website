@@ -17,7 +17,7 @@ function Main() {
         src={sideroot} 
         />
         
-        <div className='h-screen   flex flex-col justify-center items-center flex-1 self-stretch w-screen' style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className=' flex flex-col justify-center items-center flex-1 self-stretch w-screen' style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <Navbar/>
             <Hero/>
         </div>

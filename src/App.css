@@ -9,7 +9,19 @@
   background: linear-gradient(90deg, rgba(181, 133, 41, 0.3) 0%, rgba(159, 15, 41, 0.3) 33.33%, rgba(13, 75, 133, 0.3) 66.67%, rgba(41, 80, 23, 0.3) 100%);
 }
 
+.info-bg {
+    background: linear-gradient(180deg, rgba(15, 19, 42, 0.99) , rgba(15, 19, 42, 0.99) ,#95BDFF  );
+    background-size: 100% 100%;
+
+}
+
+.bg-shadow:hover {
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.4);
+
+}
+
 
 .bg-agenda{
   background: linear-gradient(180deg, #95BDFF 70.79%, #FFF 94.79%);
 }
+

@@ -12,8 +12,8 @@ import Arrow from "./Arrow";
 const SpeakersSwiper = () => {
     const [speaker, setSpeaker] = useState(null);
     return (
-        <div className="flex flex-col h-[75%] items-center justify-center mb-8">
-            <div className="relative h-full w-full">
+        <div className="flex flex-col  md:h-[75%] items-center justify-center mb-8">
+            <div className="relative  w-full">
                 <Swiper
                     spaceBetween={30}
                     autoplay={{
@@ -42,16 +42,26 @@ const SpeakersSwiper = () => {
                     
                 </Swiper>
                 <div className="slider-controler ">
-                        <div 
-                        onClick={() => useSwiper.slideNext()}
-                        className="slider-arrow after:hidden flex items-center absolute top-[20%] md:top-[20%] left-[-30px]  justify-center  p-4  z-30  cursor-pointer ">
+                        {/* <div 
+                        onClick={() => useSwiper().slideNext()}
+                        className="slider-arrow  after:hidden flex items-center absolute top-[20%] md:top-[20%] left-[-30px]  justify-center  p-4  z-30  cursor-pointer ">
                             <Arrow direction="right" />
                         </div>
                         <div 
-                        onClick={() => useSwiper.slidePrev()}
-                        className=" slider-arrow after:hidden flex items-center justify-center absolute top-[20%] md:top-[20%] right-[-30px]    p-4 z-30  cursor-pointer ">
+                        onClick={() => useSwiper().slidePrev()}
+                        className=" slider-arrow after:hidden  flex items-center justify-center absolute top-[20%] md:top-[20%] right-[-30px]    p-4 z-30  cursor-pointer ">
+                            <Arrow direction="left" />
+                        </div> */}
+                        <div className="swiper-button-prev slider-arrow after:hidden ">
+                        <div className=" slider-arrow after:hidden flex items-center absolute top-[5%] md:top-[20%] left-[-30px] lg:left-[-70px] justify-center z-30  cursor-pointer ">
+                            <Arrow direction="right" />
+                        </div>
+                    </div>
+                    <div className="swiper-button-next slider-arrow after:hidden ">
+                        <div className="    slider-arrow after:hidden flex items-center justify-center absolute top-[5%] md:top-[20%] right-[-30px] lg:right-[-70px]  z-30  cursor-pointer ">
                             <Arrow direction="left" />
                         </div>
+                    </div>
                 </div>
                 
             </div>

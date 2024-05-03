@@ -8,7 +8,7 @@ const Arrow = ({ direction}) => {
             <img
                 src={arrowImage}
                 alt="arrow"
-                className=" h-[90px] w-[90px] md:h-auto md:w-auto lg:min-w-max lg:min-h-max"
+                className=" h-[100px] w-[100px] md:h-auto md:w-auto lg:min-w-max lg:min-h-max"
             />
         
     );

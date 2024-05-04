@@ -10,12 +10,10 @@ const RegistrationForm = () => {
     email: '',
     discord_Id: '',
     year: '',
-    has_team: '',
+    hasTeam: '', // New field
     teamName: '',
     ML_level: '',
     motivation: '',
-    
-
   });
 
   const [currentStep, setCurrentStep] = useState(0);
@@ -37,15 +35,19 @@ const RegistrationForm = () => {
       setError(`Please fill in the ${currentFieldName.replace(/^\w/, (c) => c.toUpperCase())} field.`);
       return;
     } else {
-
       setError(null);
     }
-    setCurrentStep((prev) => prev + 1);
+    // Skip team name if user does not have a team
+    if (currentStep === 4 && formData.hasTeam !== 'yes') {
+      setCurrentStep((prev) => prev + 2); // Skip the team name step
+    } else {
+      setCurrentStep((prev) => prev + 1);
+    }
   };
 
   const handleBack = () => {
     if (currentStep === 0) {
-      navigate('/'); 
+      navigate('/'); // Back to home page
     } else {
       setCurrentStep((prev) => prev - 1);
     }
@@ -63,10 +65,9 @@ const RegistrationForm = () => {
     if (formData.hasTeam === 'yes') {
       formDataObj.append('TeamName', formData.teamName);
     }
-    formDataObj.append('ML_level', formData.ML_level)
+    formDataObj.append('ML_level', formData.ML_level);
     formDataObj.append('Motivation', formData.motivation);
     
-
     fetch(
       "https://script.google.com/macros/s/AKfycbyUqs2DYLN-V6QpQ-HzO2lJQU4-MhVaL_ISAR3Qz2o89Qc6k5mg9Oob4mtFOknIAPw/exec",
       {
@@ -89,7 +90,7 @@ const RegistrationForm = () => {
       })
       .catch((error) => {
         console.error("Error:", error);
-        setError("Something went wrong. Please try again and make sure to fill all the fields ");
+        setError("Something went wrong. Please try again and make sure to fill all the fields.");
       });
   };
 
@@ -133,11 +134,10 @@ const RegistrationForm = () => {
             </div>
           )}
 
-          {
-            currentStep === 2 && (
-              <div>
-                <label htmlFor="discord_Id" className="block text-lg font-semibold">Discord ID</label>
-                <input
+          {currentStep === 2 && (
+            <div>
+              <label htmlFor="discord_Id" className="block text-lg font-semibold">Discord ID</label>
+              <input
                   type="text"
                   id="discord_Id"
                   name="discord_Id"
@@ -146,25 +146,24 @@ const RegistrationForm = () => {
                   placeholder="Enter your Discord ID"
                   className="w-full border p-2 rounded-lg mt-2"
                 />
-              </div>
-            )
-          }
+            </div>
+          )}
 
           {currentStep === 3 && (
             <div>
               <label htmlFor="year" className="block text-lg font-semibold">Year</label>
               <select
-                id="year"
-                name="year"
-                value={formData.year}
-                onChange={handleChange}
-                className="w-full border p-2 rounded-lg mt-2"
-              >
-                <option value="" disabled>Select your year</option>
-                <option value="1st">1st Year</option>
-                <option value="2nd">2nd Year</option>
-                <option value="3rd">3rd Year</option>
-              </select>
+                  id="year"
+                  name="year"
+                  value={formData.year}
+                  onChange={handleChange}
+                  className="w-full border p-2 rounded-lg mt-2"
+                >
+                  <option value="" disabled>Select your year</option>
+                  <option value="1st">1st Year</option>
+                  <option value="2nd">2nd Year</option>
+                  <option value="3rd">3rd Year</option>
+                </select>
             </div>
           )}
 
@@ -185,26 +184,25 @@ const RegistrationForm = () => {
             </div>
           )}
 
-          {currentStep === 5 && formData.has_team == 'yes' && (
+          {currentStep === 5 && formData.hasTeam === 'yes' && (
             <div>
               <label htmlFor="teamName" className="block text-lg font-semibold">Team Name</label>
               <input
-                type="text"
-                id="teamName"
-                name="teamName"
-                value={formData.teamName}
-                onChange={handleChange}
-                placeholder="Enter your team name"
-                className="w-full border p-2 rounded-lg mt-2"
+                  type="text"
+                  id="teamName"
+                  name="teamName"
+                  value={formData.teamName}
+                  onChange={handleChange}
+                  placeholder="Enter your team name"
+                  className="w-full border p-2 rounded-lg mt-2"
               />
             </div>
           )}
 
-          {
-            currentStep === 6 && (
-              <div>
-                <label htmlFor="ML_level" className="block text-lg font-semibold">Machine Learning Level</label>
-                <select
+          {currentStep === 6 && (
+            <div>
+              <label htmlFor="ML_level" className="block text-lg font-semibold">Machine Learning Level</label>
+              <select
                   id="ML_level"
                   name="ML_level"
                   value={formData.ML_level}
@@ -216,48 +214,47 @@ const RegistrationForm = () => {
                   <option value="Intermediate">Intermediate</option>
                   <option value="Advanced">Advanced</option>
                 </select>
-              </div>
-            )
-          }
+            </div>
+          )}
 
           {currentStep === 7 && (
             <div>
               <label htmlFor="motivation" className="block text-lg font-semibold">Motivation</label>
               <textarea
-                id="motivation"
-                name="motivation"
-                value={formData.motivation}
-                onChange={handleChange}
-                placeholder="Describe your motivation"
-                className="w-full border p-2 rounded-lg mt-2"
+                  id="motivation"
+                  name="motivation"
+                  value={formData.motivation}
+                  onChange={handleChange}
+                  placeholder="Describe your motivation"
+                  className="w-full border p-2 rounded-lg mt-2"
               />
             </div>
           )}
 
           <div className="flex justify-between mt-6">
-            {currentStep > 8 && (
+            {currentStep > 0 && (
               <button
-              type="button"
-              onClick={handleBack}
-              className="border-2 border-green-500 text-white py-2 px-4 rounded-lg absolute bottom-4 left-4 bg-transparent flex items-center focus:outline-white"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5 mr-2">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              Back
-            </button>
+                  type="button"
+                  onClick={handleBack}
+                  className="border-2 border-green-500 text-white py-2 px-4 rounded-lg absolute bottom-4 left-4 bg-transparent flex items-center focus:outline-white"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5 mr-2">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                Back
+              </button>
             )}
             {currentStep < 7 && (
               <button
-              type="button"
-              onClick={handleNext}
-              className="mt-4 bg-green-500 text-white py-2 px-4 rounded-lg absolute bottom-3 right-3 flex items-center focus:outline-white"
-            >
-              Next
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5 ml-2">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+                  type="button"
+                  onClick={handleNext}
+                  className="mt-4 bg-green-500 text-white py-2 px-4 rounded-lg absolute bottom-3 right-3 flex items-center focus:outline-white"
+              >
+                Next
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5 ml-2">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             )}
             {currentStep === 7 && (
               <button type="submit" className="mt-4 bg-green-500 text-white py-2 px-7 rounded-lg absolute bottom-3 right-3 focus:outline-white">

@@ -10,7 +10,7 @@ const RegistrationForm = () => {
     email: '',
     discord_Id: '',
     year: '',
-    hasTeam: '', // New field
+    hasTeam: '',
     teamName: '',
     ML_level: '',
     motivation: '',
@@ -61,9 +61,11 @@ const RegistrationForm = () => {
     formDataObj.append('Email', formData.email);
     formDataObj.append('Discord_Id', formData.discord_Id);
     formDataObj.append('Year', formData.year);
-    formDataObj.append('HasTeam', formData.hasTeam);
+    formDataObj.append('Has_team', formData.hasTeam);
     if (formData.hasTeam === 'yes') {
       formDataObj.append('TeamName', formData.teamName);
+    } else {
+      formDataObj.append('TeamName', 'No team');
     }
     formDataObj.append('ML_level', formData.ML_level);
     formDataObj.append('Motivation', formData.motivation);

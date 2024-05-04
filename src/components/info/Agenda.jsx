@@ -53,7 +53,7 @@ function Agenda() {
   return (
     <div
     id='Agenda'
-    className='flex flex-col  h-screen md:h-[110vh] bg-agenda justify-start items-center gap-10 border-none'
+    className='flex flex-col h-[800px] md:h-[1000px] bg-agenda justify-start items-center gap-10 border-none'
     >
       <p className='text-[#001641] text-[28px] md:text-[48px] font-bold my-10 md:my-12'>
       AGENDA

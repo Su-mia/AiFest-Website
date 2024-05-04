@@ -1,6 +1,6 @@
 import React from 'react'
-import logo from "../../public/icons/logo-dark.svg"
-import logogdsc from "../../public/icons/logo-gdsc.svg"
+import logo from "/icons/logo-dark.svg"
+import logogdsc from "/icons/logo-gdsc.svg"
 
 function WaterMark() {
   return (

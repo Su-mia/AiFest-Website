@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import im1 from "/images/abyss_0001_blue_root_10.svg";
+import im2 from "/images/knight.svg";
+import im3 from "/images/blue_door_0004_blue_vine_06.svg";
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -192,10 +195,10 @@ const RegistrationForm = () => {
         </form>
       </div>
 
-      <img src="/public/images/abyss_0001_blue_root_10.svg" alt="Blue Root" className="absolute top-0 right-0" />
+      <img src={im1} alt="Blue Root" className="absolute top-0 right-0" />
 
-      <img src="/public/images/knight.svg" alt="A knight" className="absolute top-0 right-40 z-30"/>
-      <img src="/public/images/blue_door_0004_blue_vine_06.svg" alt="Blue Vine" className="absolute bottom-0 left-0" />
+      <img src={im2} alt="A knight" className="absolute top-0 right-40 z-30"/>
+      <img src={im3} alt="Blue Vine" className="absolute bottom-0 left-0" />
     </div>
   );
 };

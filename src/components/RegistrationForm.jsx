@@ -76,7 +76,7 @@ const RegistrationForm = () => {
 
   return (
     <div className="w-screen h-screen flex justify-center items-center bg-gradient-form">
-      <div className="w-full max-w-2xl p-12 bg-black bg-opacity-40 border border-gray-300 backdrop-blur-lg rounded-lg max-sm:mx-8 sm:mx-8">
+      <div className="w-full max-w-2xl p-12 bg-black/40 relative border border-gray-300 backdrop-blur-lg rounded-lg max-sm:mx-8 sm:mx-8">
         {error && (
           <div className="bg-red-100 text-red-800 p-3 mb-4 rounded-lg">
             {error}

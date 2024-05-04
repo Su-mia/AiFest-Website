@@ -13,7 +13,7 @@ export const speakers = [
     },
     {
         Name: 'Yasmine Kaced',
-        title:"A journey through Unsupervised learning",
+        title:"A journey through supervised learning",
         img: yasmine,
     },
     {

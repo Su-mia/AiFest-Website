@@ -1,15 +1,41 @@
-*{
+/* Reset */
+* {
   margin: 0;
   padding: 0;
 }
-.btn-gradient{
+
+.btn-gradient {
   background: linear-gradient(90deg, #B58529 0%, #9F0F29 33.33%, #0D4B85 66.67%, #295017 100%);
 }
+
 .btn-gradient-less {
   background: linear-gradient(90deg, rgba(181, 133, 41, 0.3) 0%, rgba(159, 15, 41, 0.3) 33.33%, rgba(13, 75, 133, 0.3) 66.67%, rgba(41, 80, 23, 0.3) 100%);
 }
 
-
-.bg-agenda{
+.bg-agenda {
   background: linear-gradient(180deg, #95BDFF 70.79%, #FFF 94.79%);
+}
+
+@keyframes gradient-movement {
+  0% {
+    background-position: 30% 70%;
+  }
+  25% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 70% 30%;
+  }
+  75% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 30% 70%;
+  }
+}
+
+/* Apply the animation to the background gradient */
+.bg-gradient-form {
+  background: radial-gradient(circle at 30% 70%, #B58529, #9F0F29 33.33%, #0D4B85 66.67%, #295017 100%);
+  animation: gradient-movement 10s infinite;
 }

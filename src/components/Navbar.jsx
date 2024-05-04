@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import logo from "/icons/logo.svg";
 import menu from "/icons/menu.svg";
 import hover from "/images/bg-ec.svg";
-import { HashLink } from 'react-router-hash-link';
+import { HashLink, NavHashLink } from 'react-router-hash-link';
 import "../App.css";
 
 function Navbar() {
@@ -94,9 +94,13 @@ function Navbar() {
 
                     
                 </div>
+                <NavHashLink
+                to={"/register"}
+                >
                 <button className='btn-gradient px-8 py-2 rounded-[30px] font-primary text-white font-bold text-[16px] md:text-[24px] mx-6 md:my-6 outline-none md:w-min'>
                     REGISTER
                 </button>
+                </NavHashLink>
             </div>
 
 

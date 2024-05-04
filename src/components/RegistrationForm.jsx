@@ -67,7 +67,7 @@ const RegistrationForm = () => {
       })
       .catch((error) => {
         console.error("Error:", error);
-        setError("Something went wrong. Please try again.");
+        setError("Something went wrong. Please try again and make sure to fill all the fields ");
       });
   };
 

@@ -73,7 +73,7 @@ const RegistrationForm = () => {
 
   return (
     <div className="w-screen h-screen flex justify-center items-center bg-gradient-form">
-      <div className="w-full max-w-2xl p-12 bg-black bg-opacity-40 border border-gray-300 backdrop-blur-lg rounded-lg sm:mx-8"> {/* Increased margin for small screens */}
+      <div className="w-full max-w-2xl p-12 bg-black bg-opacity-40 border border-gray-300 backdrop-blur-lg rounded-lg max-sm:mx-8 sm:mx-8">
         {error && (
           <div className="bg-red-100 text-red-800 p-3 mb-4 rounded-lg">
             {error}
@@ -90,6 +90,7 @@ const RegistrationForm = () => {
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
+                placeholder="Enter your full name"
                 className="w-full border p-2 mt-2 rounded-lg"
               />
             </div>
@@ -104,6 +105,7 @@ const RegistrationForm = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                placeholder="Enter your email address"
                 className="w-full border p-2 rounded-lg mt-2"
               />
             </div>
@@ -119,9 +121,7 @@ const RegistrationForm = () => {
                 onChange={handleChange}
                 className="w-full border p-2 rounded-lg mt-2"
               >
-                <option value="" disabled>
-                  Select Year
-                </option>
+                <option value="" disabled>Select your year</option>
                 <option value="1st">1st Year</option>
                 <option value="2nd">2nd Year</option>
                 <option value="3rd">3rd Year</option>
@@ -138,6 +138,7 @@ const RegistrationForm = () => {
                 name="teamName"
                 value={formData.teamName}
                 onChange={handleChange}
+                placeholder="Enter your team name"
                 className="w-full border p-2 rounded-lg mt-2"
               />
             </div>
@@ -151,6 +152,7 @@ const RegistrationForm = () => {
                 name="motivation"
                 value={formData.motivation}
                 onChange={handleChange}
+                placeholder="Describe your motivation"
                 className="w-full border p-2 rounded-lg mt-2"
               />
             </div>
@@ -159,24 +161,30 @@ const RegistrationForm = () => {
           <div className="flex justify-between mt-6">
             {currentStep > 0 && (
               <button
-                type="button"
-                onClick={handleBack}
-                className="border-2 border-green-500 text-green-500 py-2 px-4 rounded absolute bottom-4 left-4 bg-transparent"
-              >
-                Back
-              </button>
+              type="button"
+              onClick={handleBack}
+              className="border-2 border-green-500 text-white py-2 px-4 rounded-lg absolute bottom-4 left-4 bg-transparent flex items-center focus:outline-white"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5 mr-2">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Back
+            </button>
             )}
             {currentStep < 4 && (
               <button
-                type="button"
-                onClick={handleNext}
-                className="mt-4 bg-green-500 text-white py-2 px-4 rounded absolute bottom-3 right-3"
-              >
-                Next
-              </button>
+              type="button"
+              onClick={handleNext}
+              className="mt-4 bg-green-500 text-white py-2 px-4 rounded-lg absolute bottom-3 right-3 flex items-center focus:outline-white"
+            >
+              Next
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5 ml-2">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
             )}
             {currentStep === 4 && (
-              <button type="submit" className="mt-4 bg-green-500 text-white py-2 px-4 rounded absolute bottom-3 right-3">
+              <button type="submit" className="mt-4 bg-green-500 text-white py-2 px-7 rounded-lg absolute bottom-3 right-3 focus:outline-white">
                 Submit
               </button>
             )}
@@ -185,7 +193,8 @@ const RegistrationForm = () => {
       </div>
 
       <img src="/public/images/abyss_0001_blue_root_10.svg" alt="Blue Root" className="absolute top-0 right-0" />
-      <img src="/public/images/knight.svg" alt="The Knight" className="absolute top-0 right-40 z-30" />
+
+      <img src="/public/images/knight.svg" alt="A knight" className="absolute top-0 right-40 z-30"/>
       <img src="/public/images/blue_door_0004_blue_vine_06.svg" alt="Blue Vine" className="absolute bottom-0 left-0" />
     </div>
   );

@@ -14,7 +14,7 @@ function Speakers() {
       SPEAKERS
       </p>
       <SpeakersSwiper/>
-      <img src={knightDream} alt="knightDream" className="absolute bottom-0 md:bottom-[-5rem]  " />
+      <img src={knightDream} alt="knightDream" className="absolute bottom-0 md:bottom-[-5rem] right-2 md:right-5 h-[100px] md:h-auto" />
     </div>
   )
 }

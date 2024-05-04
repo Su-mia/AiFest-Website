@@ -27,6 +27,14 @@ const RegistrationForm = () => {
   };
 
   const handleNext = () => {
+    const currentFieldName = Object.keys(formData)[currentStep];
+    if (formData[currentFieldName] === '') {
+      setError(`Please fill in the ${currentFieldName.replace(/^\w/, (c) => c.toUpperCase())} field.`);
+      return;
+    } else {
+
+      setError(null);
+    }
     setCurrentStep((prev) => prev + 1);
   };
 

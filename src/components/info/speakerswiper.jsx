@@ -42,16 +42,6 @@ const SpeakersSwiper = () => {
                     
                 </Swiper>
                 <div className="slider-controler ">
-                        {/* <div 
-                        onClick={() => useSwiper().slideNext()}
-                        className="slider-arrow  after:hidden flex items-center absolute top-[20%] md:top-[20%] left-[-30px]  justify-center  p-4  z-30  cursor-pointer ">
-                            <Arrow direction="right" />
-                        </div>
-                        <div 
-                        onClick={() => useSwiper().slidePrev()}
-                        className=" slider-arrow after:hidden  flex items-center justify-center absolute top-[20%] md:top-[20%] right-[-30px]    p-4 z-30  cursor-pointer ">
-                            <Arrow direction="left" />
-                        </div> */}
                         <div className="swiper-button-prev slider-arrow after:hidden ">
                         <div className=" slider-arrow after:hidden flex items-center absolute top-[5%] md:top-[20%] left-[-30px] lg:left-[-70px] justify-center z-30  cursor-pointer ">
                             <Arrow direction="right" />

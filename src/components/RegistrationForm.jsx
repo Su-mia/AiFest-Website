@@ -10,6 +10,7 @@ const RegistrationForm = () => {
     email: '',
     discord_Id: '',
     year: '',
+    has_team: '',
     teamName: '',
     ML_level: '',
     motivation: '',
@@ -58,7 +59,10 @@ const RegistrationForm = () => {
     formDataObj.append('Email', formData.email);
     formDataObj.append('Discord_Id', formData.discord_Id);
     formDataObj.append('Year', formData.year);
-    formDataObj.append('TeamName', formData.teamName);
+    formDataObj.append('HasTeam', formData.hasTeam);
+    if (formData.hasTeam === 'yes') {
+      formDataObj.append('TeamName', formData.teamName);
+    }
     formDataObj.append('ML_level', formData.ML_level)
     formDataObj.append('Motivation', formData.motivation);
     
@@ -166,6 +170,23 @@ const RegistrationForm = () => {
 
           {currentStep === 4 && (
             <div>
+              <label htmlFor="hasTeam" className="block text-lg font-semibold">Do you have a team?</label>
+              <select
+                  id="hasTeam"
+                  name="hasTeam"
+                  value={formData.hasTeam}
+                  onChange={handleChange}
+                  className="w-full border p-2 rounded-lg mt-2"
+                >
+                  <option value="" disabled>Select if you have a team</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+            </div>
+          )}
+
+          {currentStep === 5 && formData.has_team == 'yes' && (
+            <div>
               <label htmlFor="teamName" className="block text-lg font-semibold">Team Name</label>
               <input
                 type="text"
@@ -180,7 +201,7 @@ const RegistrationForm = () => {
           )}
 
           {
-            currentStep === 5 && (
+            currentStep === 6 && (
               <div>
                 <label htmlFor="ML_level" className="block text-lg font-semibold">Machine Learning Level</label>
                 <select
@@ -199,7 +220,7 @@ const RegistrationForm = () => {
             )
           }
 
-          {currentStep === 6 && (
+          {currentStep === 7 && (
             <div>
               <label htmlFor="motivation" className="block text-lg font-semibold">Motivation</label>
               <textarea
@@ -214,7 +235,7 @@ const RegistrationForm = () => {
           )}
 
           <div className="flex justify-between mt-6">
-            {currentStep > 7 && (
+            {currentStep > 8 && (
               <button
               type="button"
               onClick={handleBack}
@@ -226,7 +247,7 @@ const RegistrationForm = () => {
               Back
             </button>
             )}
-            {currentStep < 6 && (
+            {currentStep < 7 && (
               <button
               type="button"
               onClick={handleNext}
@@ -238,7 +259,7 @@ const RegistrationForm = () => {
               </svg>
             </button>
             )}
-            {currentStep === 6 && (
+            {currentStep === 7 && (
               <button type="submit" className="mt-4 bg-green-500 text-white py-2 px-7 rounded-lg absolute bottom-3 right-3 focus:outline-white">
                 Submit
               </button>

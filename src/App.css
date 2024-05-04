@@ -1,4 +1,3 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -18,24 +17,21 @@
 
 @keyframes gradient-movement {
   0% {
-    background-position: 30% 70%;
-  }
-  25% {
-    background-position: 50% 50%;
+    background-size: 100%;
+    background-position: center;
   }
   50% {
-    background-position: 70% 30%;
-  }
-  75% {
+    background-size: 200%;
     background-position: 50% 50%;
   }
   100% {
-    background-position: 30% 70%;
+    background-size: 100%;
+    background-position: center;
   }
 }
 
-/* Apply the animation to the background gradient */
 .bg-gradient-form {
+
   background: radial-gradient(circle at 30% 70%, #B58529, #9F0F29 33.33%, #0D4B85 66.67%, #295017 100%);
-  animation: gradient-movement 10s infinite;
+  animation: gradient-movement 20s infinite;
 }

@@ -8,9 +8,13 @@ const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
+    discord_Id: '',
     year: '',
     teamName: '',
+    ML_level: '',
     motivation: '',
+    
+
   });
 
   const [currentStep, setCurrentStep] = useState(0);
@@ -52,12 +56,15 @@ const RegistrationForm = () => {
     const formDataObj = new FormData();
     formDataObj.append('FullName', formData.fullName);
     formDataObj.append('Email', formData.email);
+    formDataObj.append('Discord_Id', formData.discord_Id);
     formDataObj.append('Year', formData.year);
     formDataObj.append('TeamName', formData.teamName);
+    formDataObj.append('ML_level', formData.ML_level)
     formDataObj.append('Motivation', formData.motivation);
+    
 
     fetch(
-      "https://script.google.com/macros/s/AKfycbw0135hgTQCQIs7MUi1rfWvnwHq6dVypSVjhLSu6QTKguTELOz_EAgYEKp9iXCuDz7N/exec",
+      "https://script.google.com/macros/s/AKfycbyUqs2DYLN-V6QpQ-HzO2lJQU4-MhVaL_ISAR3Qz2o89Qc6k5mg9Oob4mtFOknIAPw/exec",
       {
         method: "POST",
         body: formDataObj,
@@ -122,7 +129,24 @@ const RegistrationForm = () => {
             </div>
           )}
 
-          {currentStep === 2 && (
+          {
+            currentStep === 2 && (
+              <div>
+                <label htmlFor="discord_Id" className="block text-lg font-semibold">Discord ID</label>
+                <input
+                  type="text"
+                  id="discord_Id"
+                  name="discord_Id"
+                  value={formData.discord_Id}
+                  onChange={handleChange}
+                  placeholder="Enter your Discord ID"
+                  className="w-full border p-2 rounded-lg mt-2"
+                />
+              </div>
+            )
+          }
+
+          {currentStep === 3 && (
             <div>
               <label htmlFor="year" className="block text-lg font-semibold">Year</label>
               <select
@@ -140,7 +164,7 @@ const RegistrationForm = () => {
             </div>
           )}
 
-          {currentStep === 3 && (
+          {currentStep === 4 && (
             <div>
               <label htmlFor="teamName" className="block text-lg font-semibold">Team Name</label>
               <input
@@ -155,7 +179,27 @@ const RegistrationForm = () => {
             </div>
           )}
 
-          {currentStep === 4 && (
+          {
+            currentStep === 5 && (
+              <div>
+                <label htmlFor="ML_level" className="block text-lg font-semibold">Machine Learning Level</label>
+                <select
+                  id="ML_level"
+                  name="ML_level"
+                  value={formData.ML_level}
+                  onChange={handleChange}
+                  className="w-full border p-2 rounded-lg mt-2"
+                >
+                  <option value="" disabled>Select your ML level</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+              </div>
+            )
+          }
+
+          {currentStep === 6 && (
             <div>
               <label htmlFor="motivation" className="block text-lg font-semibold">Motivation</label>
               <textarea
@@ -170,7 +214,7 @@ const RegistrationForm = () => {
           )}
 
           <div className="flex justify-between mt-6">
-            {currentStep > 0 && (
+            {currentStep > 7 && (
               <button
               type="button"
               onClick={handleBack}
@@ -182,7 +226,7 @@ const RegistrationForm = () => {
               Back
             </button>
             )}
-            {currentStep < 4 && (
+            {currentStep < 6 && (
               <button
               type="button"
               onClick={handleNext}
@@ -194,7 +238,7 @@ const RegistrationForm = () => {
               </svg>
             </button>
             )}
-            {currentStep === 4 && (
+            {currentStep === 6 && (
               <button type="submit" className="mt-4 bg-green-500 text-white py-2 px-7 rounded-lg absolute bottom-3 right-3 focus:outline-white">
                 Submit
               </button>

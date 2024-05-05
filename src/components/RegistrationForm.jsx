@@ -9,6 +9,7 @@ const RegistrationForm = () => {
     fullName: '',
     email: '',
     discord_Id: '',
+    school: '',
     year: '',
     hasTeam: '',
     teamName: '',
@@ -38,7 +39,7 @@ const RegistrationForm = () => {
       setError(null);
     }
     // Skip team name if user does not have a team
-    if (currentStep === 4 && formData.hasTeam !== 'yes') {
+    if (currentStep === 5 && formData.hasTeam !== 'yes') {
       setCurrentStep((prev) => prev + 2); // Skip the team name step
     } else {
       setCurrentStep((prev) => prev + 1);
@@ -60,6 +61,7 @@ const RegistrationForm = () => {
     formDataObj.append('FullName', formData.fullName);
     formDataObj.append('Email', formData.email);
     formDataObj.append('Discord_Id', formData.discord_Id);
+    formDataObj.append('School', formData.school);
     formDataObj.append('Year', formData.year);
     formDataObj.append('Has_team', formData.hasTeam);
     if (formData.hasTeam === 'yes') {
@@ -71,7 +73,7 @@ const RegistrationForm = () => {
     formDataObj.append('Motivation', formData.motivation);
     
     fetch(
-      "https://script.google.com/macros/s/AKfycbyUqs2DYLN-V6QpQ-HzO2lJQU4-MhVaL_ISAR3Qz2o89Qc6k5mg9Oob4mtFOknIAPw/exec",
+      "https://script.google.com/macros/s/AKfycbxDb8hQaTkeYyPx6YYgvSZbkSIclCFeUQEyLkIsVXzJFwOHwVDrglzYSiFDe_PtUyws/exec",
       {
         method: "POST",
         body: formDataObj,
@@ -151,7 +153,31 @@ const RegistrationForm = () => {
             </div>
           )}
 
-          {currentStep === 3 && (
+          {
+            currentStep === 3 && (
+              <div>
+                <label htmlFor="school" className="block text-lg font-semibold">School</label>
+                <select 
+                  id="school"
+                  name="school"
+                  value={formData.school}
+                  onChange={handleChange}
+                  className="w-full border p-2 rounded-lg mt-2"
+                >
+                  <option value="" disabled >Select your school</option>
+                  <option value="ENSIA">ENSIA - National higher school of artificial intelligence</option>
+                  <option value="ENSM">ENSM - National higher schhol of mathematics</option>
+                  <option value="ENSSA">National higher school of autonomous systems</option>
+                  <option value="ENSNT">National higher school of nano technologies</option>
+                  <option value="other">other</option>
+
+                </select>
+
+              </div>
+            )
+          }
+
+          {currentStep === 4 && (
             <div>
               <label htmlFor="year" className="block text-lg font-semibold">Year</label>
               <select
@@ -169,7 +195,7 @@ const RegistrationForm = () => {
             </div>
           )}
 
-          {currentStep === 4 && (
+          {currentStep === 5 && (
             <div>
               <label htmlFor="hasTeam" className="block text-lg font-semibold">Do you have a team?</label>
               <select
@@ -186,7 +212,7 @@ const RegistrationForm = () => {
             </div>
           )}
 
-          {currentStep === 5 && formData.hasTeam === 'yes' && (
+          {currentStep === 6 && formData.hasTeam === 'yes' && (
             <div>
               <label htmlFor="teamName" className="block text-lg font-semibold">Team Name</label>
               <input
@@ -201,7 +227,7 @@ const RegistrationForm = () => {
             </div>
           )}
 
-          {currentStep === 6 && (
+          {currentStep === 7 && (
             <div>
               <label htmlFor="ML_level" className="block text-lg font-semibold">Machine Learning Level</label>
               <select
@@ -219,7 +245,7 @@ const RegistrationForm = () => {
             </div>
           )}
 
-          {currentStep === 7 && (
+          {currentStep === 8 && (
             <div>
               <label htmlFor="motivation" className="block text-lg font-semibold">Motivation</label>
               <textarea
@@ -246,7 +272,7 @@ const RegistrationForm = () => {
                 Back
               </button>
             )}
-            {currentStep < 7 && (
+            {currentStep < 8 && (
               <button
                   type="button"
                   onClick={handleNext}
@@ -258,7 +284,7 @@ const RegistrationForm = () => {
                 </svg>
               </button>
             )}
-            {currentStep === 7 && (
+            {currentStep === 8 && (
               <button type="submit" className="mt-4 bg-green-500 text-white py-2 px-7 rounded-lg absolute bottom-3 right-3 focus:outline-white">
                 Submit
               </button>

@@ -13,8 +13,8 @@ function Agenda() {
     {
       title: "Day 1",
       data: [
-        "09:00 - 10:00: Registration and Breakfast",
-        "10:00 - 10:30: Opening Ceremony",
+        "15:30 - 16:30: Check in ",
+        "16:30 - 17:00: Opening Ceremony",
         "10:30 - 11:00: Icebreaker Session",
         "11:00 - 12:00: Introduction to Hackathon ",
         "12:00 - 13:00: Team Formation ",

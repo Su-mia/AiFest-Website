@@ -1,6 +1,6 @@
 import React from 'react';
 import im1 from "/images/knight.svg";
-import im2 from "/public/images/blue_door_0004_blue_vine_06.svg"
+import im2 from "/images/blue_door_0004_blue_vine_06.svg"
 import im0 from "/images/abyss_0001_blue_root_10.svg"
 
 const ThankYouView = () => (

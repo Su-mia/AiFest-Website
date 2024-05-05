@@ -15,31 +15,34 @@ function Agenda() {
       data: [
         "15:30 - 16:30: Check in ",
         "16:30 - 17:00: Opening Ceremony",
-        "10:30 - 11:00: Icebreaker Session",
-        "11:00 - 12:00: Introduction to Hackathon ",
-        "12:00 - 13:00: Team Formation ",
+        "17:00 - 19:30: Charm your data ( workshop An Intro to data preprocessing )",
+        "19:30 - 20:00: Challenge 1 and 2 Announcement both levels",
+        "20:00 - 21:00: Dinner ",
+        "21:00 - 23:00: Work",
+        "00:00:  Challenge 3 and 4 announcement level 1/Challenge 3 announcement level 2"
       ]
     },
     {
       title: "Day 2",
       data: [
-        "09:00 - 10:00: Breakfast and Networking",
-        "10:00 - 11:30: Tech Workshop 1",
-        "11:30 - 12:30: Tech Workshop 2",
-        "12:30 - 13:30: Lunch Break",
-        "15:00 - 15:30: Tea/Coffee Break",
-        "15:30 - 17:30: Hacking Continues",
+        "09:00 - 12:00: Workshops for both levels ",
+        "12:00 - 14:30: Lunch  + Salat Break",
+        "14:30 - 17:00: Workshops for both levels",
+        "17:00 - 18:00: Coffee Break",
+        "18:00 - 18:30:  Challenge 5 level 1/ Challenge 4 level 2",
+        "22:00 - 23:00: Fun activities",
+        "23:00: Work"
 
       ]
     },
     {
       title: "Day 3",
       data: [
-        "09:00 - 10:00: Breakfast ",
-        "10:00 - 12:00: Submission of Projects ",
-        "12:00 - 13:00: Lunch Break",
-        "13:00 - 15:00: Demo Sessions with Judges",
-        "15:00 - 16:00: Judges Deliberation ",
+        "09:00 - 13:00: Work ",
+        "13:00 - 14:00: Lunch break ",
+        "15:00 : submission of solutions",
+        "16:00 - 17:00: Coffee Break + Salat",
+        "17:00 - 17:30: Closing Ceremony and Winners Announcement ",
 
       ]
     }

@@ -18,7 +18,6 @@ function Agenda() {
         "17:00 - 19:30: Charm your data ( workshop An Intro to data preprocessing )",
         "19:30 - 20:00: Challenge 1 and 2 Announcement both levels",
         "20:00 - 21:00: Dinner ",
-        "21:00 - 23:00: Work",
         "00:00:  Challenge 3 and 4 announcement level 1/Challenge 3 announcement level 2"
       ]
     },
@@ -42,7 +41,7 @@ function Agenda() {
         "13:00 - 14:00: Lunch break ",
         "15:00 : submission of solutions",
         "16:00 - 17:00: Coffee Break + Salat",
-        "17:00 - 17:30: Closing Ceremony and Winners Announcement ",
+        "17:00 - 17:3 0: Closing Ceremony and Winners Announcement ",
 
       ]
     }
